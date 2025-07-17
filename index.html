@@ -1,2 +1,43 @@
-<h1 id="zgd.github.io">zgd.github.io</h1>
-<h1 id="zgd.github.io-1">zgd.github.io</h1>
+<h1 id="简介">简介</h1>
+<p>记录过程以及遇到的问题。</p>
+<h1 id="戴尔主机装ubuntu">戴尔主机装Ubuntu</h1>
+<p>1.官网下载Ubuntu的iso文件放入u盘中。</p>
+<p>2.电脑开机，按F12进入BIOS界面，介质从硬盘改为USB，选择启动方式以 “USB” 引导加载。</p>
+<p>3.常规安装选择“Try or Install Ubuntu”‌，遇到显卡问题时选择“Ubuntu (safe graphics)”‌，通常都是常规安装。</p>
+<p>4.经过上面的选择，就会进入ubuntu安装的一系列节点。</p>
+<p><font color= "#FF0000">注意</font>：</p>
+<p>1.ubuntu的安装选项需要选择中文方便后续查看。</p>
+<p>2.安装中文输入法，主要有IBus以及Fcitx，这里拿IBus为例：</p>
+<p>(1)在setting中选择language and region ,然后“Manage Installed Languages”，“Install/Remove Languages”，“Chinese(Simplified)”，“Apply”</p>
+<p>(2)执行如下命令：</p>
+<p><font color= "#0000FF">sudo apt update</font> </br></p>
+<p><font color= "#0000FF">sudo apt-get install ibus ibus-clutter ibus-gtk ibus-gtk3 ibus-qt4</font> </br></p>
+<p>(3)终端运行ibus-setup，点击“input method”，添加“chineses”-“intelligent pinyin”，然后关闭。</p>
+<p>(4)在“设置setting”-“language and region”-“input source”中，点击“+”、点击“chinese”，添加“chineses”-“intelligent pinyin””。此时可以看到已经有中文输入法。中英文切换方式win+space。</p>
+<h1 id="ubuntu下使用virt-manager">Ubuntu下使用virt-manager</h1>
+<p>1.首先安装virt-manager运行如下命令：</p>
+<p><font color= "#0000FF">sudo apt-get install qemu qemu-kvm qemu-system -y</font></p>
+<p><font color= "#0000FF">sudo apt-get install virt-manager -y</font></p>
+<p>2.终端界面输入virt-manager并且选择创建新的虚拟机。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img   src="https://gitee.com/eqweaa/blog/raw/master/picture/1.png"/> </span></p>
+<p>3.选择本地安装介质iso，并且准备好需要运行的iso文件。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/2.png"/> </span></p>
+<p>4.根据iso安装的路径选择，这里需要注意的是下方的检测，有的iso文件可以自动检测，但是有的不行，如果不西行的话可以自己填入一个ubuntu版本。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/3.png"/> </span></p>
+<p>5.选择cpu核数以及内存大小。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img src="https://gitee.com/eqweaa/blog/raw/master/picture/4.png"/> </span></p>
+<p>6.选择自定义的存储，最好大于50G。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img src="https://gitee.com/eqweaa/blog/raw/master/picture/5.png"/> </span></p>
+<p>7.最后可以选择自定义的安装配置。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/6.png"/> </span></p>
+<h1 id="拥有自己名字的博客">拥有自己名字的博客</h1>
+<p>1.在github创建一个新的仓库，名字叫做：账户名.github.io</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/8.png"/> </span></p>
+<p>2.在创建好的仓库下创建index.html文件，然后就可以根据账户名.github.io来访问这个html。</p>
+<p>3.注册阿里云，查找自己想要的域名是否被注册，例如自己的姓名，如下图。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/7.png"/> </span></p>
+<p>4.进入阿里云，云解析DNS，权威域名解析进行如下设置。</p>
+<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/9.png"/> </span></p>
+<p>5.进入github仓库设置Custom domain，设置成自己的域名。</p>
+<p>6.阿里云一定要实名认证域名才能够使用。</p>
+<p>7.最后可以根据自己的域名进行网站的访问。</p>
