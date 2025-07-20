@@ -19,25 +19,27 @@
 <p><font color= "#0000FF">sudo apt-get install qemu qemu-kvm qemu-system -y</font></p>
 <p><font color= "#0000FF">sudo apt-get install virt-manager -y</font></p>
 <p>2.终端界面输入virt-manager并且选择创建新的虚拟机。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img   src="https://gitee.com/eqweaa/blog/raw/master/picture/1.png"/> </span></p>
 <p>3.选择本地安装介质iso，并且准备好需要运行的iso文件。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/2.png"/> </span></p>
 <p>4.根据iso安装的路径选择，这里需要注意的是下方的检测，有的iso文件可以自动检测，但是有的不行，如果不西行的话可以自己填入一个ubuntu版本。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/3.png"/> </span></p>
 <p>5.选择cpu核数以及内存大小。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img src="https://gitee.com/eqweaa/blog/raw/master/picture/4.png"/> </span></p>
 <p>6.选择自定义的存储，最好大于50G。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img src="https://gitee.com/eqweaa/blog/raw/master/picture/5.png"/> </span></p>
 <p>7.最后可以选择自定义的安装配置。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/6.png"/> </span></p>
 <h1 id="拥有自己名字的博客">拥有自己名字的博客</h1>
 <p>1.在github创建一个新的仓库，名字叫做：账户名.github.io</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/8.png"/> </span></p>
 <p>2.在创建好的仓库下创建index.html文件，然后就可以根据账户名.github.io来访问这个html。</p>
-<p>3.注册阿里云，查找自己想要的域名是否被注册，例如自己的姓名，如下图。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/7.png"/> </span></p>
+<p>3.注册阿里云，查找自己想要的域名是否被注册，例如自己的姓名。</p>
 <p>4.进入阿里云，云解析DNS，权威域名解析进行如下设置。</p>
-<p><span style="display: inline; vertical-align: middle;"> <img  src="https://gitee.com/eqweaa/blog/raw/master/picture/9.png"/> </span></p>
+<p>(1)主机记录值：www 记录类型：CNAME 记录值：自己注册的域名</p>
+<p>(2)主机记录值：@ 记录类型：A 记录值：185.199.108.153</p>
 <p>5.进入github仓库设置Custom domain，设置成自己的域名。</p>
 <p>6.阿里云一定要实名认证域名才能够使用。</p>
 <p>7.最后可以根据自己的域名进行网站的访问。</p>
+<h1 id="编译linux内核">编译Linux内核</h1>
+<p>1.在如下连接下载某个版本的Linux并且解压：</p>
+<p>https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/</p>
+<p>2.进入下载好的Linux内核代码运行如下命令进行一些配置：</p>
+<p>make O=build menuconfig</p>
+<p>3.编译内核镜像，会在/build下生成vmlinux,/build/arch/x86_64生成bzImage：</p>
+<p>make O=build bzImage -j8</p>
+<p>vmlinux 文件是通过编译和链接内核代码生成的原始 ELF 文件，未经过压缩，包含符号和重定位信息。</p>
+<p>bzImage 则是从 vmlinux 派生而来的，经过压缩和处理的内核映像文件。</p>
